@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shashidhar Hiremath | Software Engineer</title>
+<meta name="description" content="Software engineer working with Node.js, PostgreSQL and AWS. 2 years testing and building backend-heavy SaaS applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#161616;--paper:#fff;--cream:#fffbe0;--ac:#ffd400;--ac-deep:#a36b00;--line:rgba(22,22,22,.16);--muted:#5c5c5c;--ok:#0b6b3a;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;color:var(--ink);font:400 16px/1.65 "IBM Plex Sans",system-ui,Arial,sans-serif;background:var(--paper)}
+a{color:inherit}:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;white-space:nowrap}
+.brand i{background:var(--ac);color:var(--ink);font-style:normal;font-weight:700;width:30px;height:30px;display:grid;place-items:center;border-radius:6px}
+.links{display:flex;gap:4px;overflow-x:auto}
+.links a{padding:8px 14px;font-size:14px;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent}
+.links a:hover{color:var(--ink);border-bottom-color:var(--ac)}
+.btn{display:inline-block;background:var(--ac);color:var(--ink);font-weight:600;text-decoration:none;padding:13px 24px;border-radius:6px;margin:0 10px 10px 0;border:2px solid var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.alt{background:var(--paper)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:80px 0 60px}
+.hero h1{font-size:clamp(38px,6vw,78px);line-height:1.04;margin:0 0 20px;font-weight:600;letter-spacing:-.035em}
+.hero h1 span{background:var(--ac);padding:0 .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p{color:var(--muted);font-size:19px;max-width:48ch;margin:0 0 30px}
+.code{background:var(--paper);border:2px solid var(--ink);border-radius:8px;box-shadow:8px 8px 0 var(--ac);overflow:hidden}
+.code header{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--ac);border-bottom:2px solid var(--ink);font:500 12px var(--mono)}
+.code header em{margin-left:auto;font-style:normal;font-weight:500;background:var(--ink);color:var(--ac);padding:2px 8px;border-radius:99px}
+.code pre{margin:0;padding:18px 20px;font:13.5px/1.8 var(--mono);color:var(--ink);overflow-x:auto}
+.code pre div{opacity:0;animation:show .25s forwards}
+@keyframes show{to{opacity:1}}
+.k{color:#777}.s{color:var(--ac-deep);font-weight:500}.n{color:var(--ok);font-weight:500}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:2px solid var(--ink);border-radius:8px;background:var(--cream);overflow:hidden}
+.stats div{padding:26px 24px;border-right:2px solid var(--ink)}
+.stats div:last-child{border-right:0}
+.stats b{display:inline-block;font-size:46px;font-weight:600;line-height:1.1;letter-spacing:-.03em;background:linear-gradient(transparent 60%,var(--ac) 60%);padding:0 4px}
+.stats small{display:block;color:var(--muted)}
+
+section{padding:84px 0 0}
+h2{font-size:clamp(28px,4vw,44px);margin:0 0 8px;font-weight:600;letter-spacing:-.03em}
+h2::after{content:"";display:block;width:64px;height:6px;background:var(--ac);margin-top:12px;border-radius:3px}
+.sub{color:var(--muted);margin:16px 0 32px;max-width:62ch}
+.lead{font-size:19px;color:#2a2a2a;max-width:68ch;margin:0}
+
+.timeline{border-left:4px solid var(--ac);padding-left:28px;position:relative}
+.timeline::before{content:"";position:absolute;left:-10px;top:6px;width:16px;height:16px;background:var(--ac);border:2px solid var(--ink);border-radius:50%}
+.timeline h3{margin:0;font-size:22px;font-weight:600}
+.timeline .meta{color:var(--muted);font:500 14px var(--mono);margin:4px 0 14px}
+ul{margin:0;padding-left:20px;color:#2a2a2a;max-width:80ch}li{margin:8px 0}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.card{background:var(--paper);border:2px solid var(--ink);border-radius:8px;padding:28px;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ac)}
+.card .kind{display:inline-block;background:var(--ac);border:2px solid var(--ink);font:500 12px var(--mono);padding:2px 10px;border-radius:99px;margin-bottom:14px}
+.card h3{margin:0 0 14px;font-size:24px;font-weight:600}
+.tag{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--ink);font:12px var(--mono);padding:4px 10px;border-radius:99px;margin:14px 8px 0 0}
+
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.group{background:var(--cream);border:2px solid var(--ink);border-radius:8px;padding:22px}
+.group h3{margin:0 0 14px;font-size:14px;font-family:var(--mono);font-weight:500;display:inline-block;background:var(--ac);padding:2px 10px;border-radius:99px}
+.group{}
+.pill{display:inline-block;background:var(--paper);border:1.5px solid var(--ink);border-radius:6px;padding:6px 12px;margin:0 8px 8px 0;font-size:14px;transition:background .15s}
+.pill:hover{background:var(--ac)}
+
+.edu{background:var(--paper);border:2px solid var(--ink);border-radius:8px;padding:22px 26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.edu span{color:var(--muted)}
+
+.contact{margin-top:84px;text-align:center;padding:72px 22px;border:2px solid var(--ink);border-radius:16px;background:var(--ac);box-shadow:10px 10px 0 var(--ink)}
+.contact h2{font-size:clamp(32px,5vw,58px)}
+.contact h2::after{background:var(--ink);margin:12px auto 0}
+.contact .sub{color:#2a2a2a}
+.mail{display:inline-block;font:500 clamp(16px,3vw,26px) var(--mono);color:var(--ink);text-decoration:none;border-bottom:3px solid var(--ink);margin:12px 0 30px;word-break:break-all}
+.contact .btn{background:var(--ink);color:var(--ac)}
+.contact .btn.alt{background:var(--paper);color:var(--ink)}
+.contact .btn:hover{box-shadow:4px 4px 0 var(--paper)}
+footer{padding:56px 0 44px;color:var(--muted);text-align:center;font-size:14px}
+
+#splash{position:fixed;inset:0;z-index:100;background:var(--ac);display:grid;place-items:center;padding:24px;transition:opacity .7s,visibility .7s}
+#splash.gone{opacity:0;visibility:hidden}
+#splash .in{width:min(660px,100%)}
+#man{display:block;width:min(400px,82vw);height:auto;margin:0 auto;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.armL{animation:type .34s ease-in-out infinite alternate}
+.armR{animation:type .34s .17s ease-in-out infinite alternate}
+@keyframes type{to{transform:translateY(5px)}}
+.head{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-3px)}}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 3.2s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.fl{opacity:0;animation:fl 3.6s ease-in-out infinite}
+@keyframes fl{0%{opacity:0;transform:translateY(12px)}30%,70%{opacity:1}100%{opacity:0;transform:translateY(-14px)}}
+.steam{opacity:0;animation:fl 2.4s ease-in-out infinite}
+#nm{margin:6px 0 0;text-align:center;font-size:clamp(28px,7.6vw,72px);line-height:1.08;font-weight:600;letter-spacing:-.035em}
+#nm span{display:inline-block;opacity:0;animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
+.sp-role{display:block;width:max-content;max-width:100%;margin:16px auto 0;background:var(--paper);border:2px solid var(--ink);border-radius:8px;padding:6px 22px;font-weight:600;font-size:clamp(15px,2.4vw,24px);box-shadow:5px 5px 0 var(--ink);opacity:0;animation:rise .6s 2.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+#skip{position:absolute;right:20px;bottom:20px;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font:13px var(--mono);padding:8px 14px;border-radius:6px;cursor:pointer}
+#skip:hover{background:var(--ink);color:var(--ac)}
+body.locked{overflow:hidden}
+
+/* logo marquee */
+.techlabel{font:500 14px var(--mono);color:var(--muted);margin:0 0 14px}
+.marquee{overflow:hidden;margin:0 0 56px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.row{display:flex;width:max-content;padding:6px 6px 12px;animation:scroll 40s linear infinite}
+.row.rev{animation-direction:reverse;animation-duration:46s}
+.marquee:hover .row{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.tile{display:flex;align-items:center;gap:12px;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:9px 18px 9px 9px;margin-right:16px;font-weight:600;white-space:nowrap;box-shadow:4px 4px 0 var(--ac)}
+.ico{width:40px;height:40px;border-radius:8px;background:var(--ac);border:2px solid var(--ink);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tile:hover .ico svg{animation:wig .6s}
+@keyframes wig{25%{transform:rotate(-14deg) scale(1.2)}75%{transform:rotate(14deg) scale(1.2)}}
+@media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.row{width:auto;flex-wrap:wrap}}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:48px}.links{display:none}.stats div{border-right:0;border-bottom:2px solid var(--ink)}.stats div:last-child{border-bottom:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.code pre div,#nm span,.sp-role,.fl{opacity:1}}
+</style>
+</head>
+<body class="locked">
+
+<div id="splash" role="dialog" aria-label="Welcome">
+  <div class="in">
+    <svg id="man" viewBox="0 0 360 280" role="img" aria-label="Animated illustration of a developer typing on a laptop">
+      <g class="fl" style="animation-delay:0s"><text x="58" y="96" font-family="IBM Plex Mono,monospace" font-size="22" font-weight="500" fill="#161616">&lt;/&gt;</text></g>
+      <g class="fl" style="animation-delay:.9s"><text x="268" y="72" font-family="IBM Plex Mono,monospace" font-size="22" font-weight="500" fill="#161616">{ }</text></g>
+      <g class="fl" style="animation-delay:1.8s"><text x="52" y="170" font-family="IBM Plex Mono,monospace" font-size="26" font-weight="500" fill="#161616">λ</text></g>
+      <g class="fl" style="animation-delay:2.6s"><text x="272" y="150" font-family="IBM Plex Mono,monospace" font-size="20" font-weight="500" fill="#161616">200</text></g>
+      <rect x="24" y="212" width="312" height="12" rx="3" fill="#161616"/>
+      <path d="M60 224v50M300 224v50" stroke="#161616" stroke-width="7" stroke-linecap="round"/>
+      <path d="M118 212v-52q0-26 30-30h64q30 4 30 30v52z" fill="#fff" stroke="#161616" stroke-width="3" stroke-linejoin="round"/>
+      <g class="armL"><path d="M128 150L140 196" stroke="#161616" stroke-width="22" stroke-linecap="round"/><path d="M128 150L140 196" stroke="#fff" stroke-width="16" stroke-linecap="round"/></g>
+      <g class="armR"><path d="M232 150L220 196" stroke="#161616" stroke-width="22" stroke-linecap="round"/><path d="M232 150L220 196" stroke="#fff" stroke-width="16" stroke-linecap="round"/></g>
+      <rect x="170" y="114" width="20" height="20" fill="#f3c9a5" stroke="#161616" stroke-width="3"/>
+      <g class="head">
+        <circle cx="150" cy="96" r="5" fill="#f3c9a5" stroke="#161616" stroke-width="3"/>
+        <circle cx="210" cy="96" r="5" fill="#f3c9a5" stroke="#161616" stroke-width="3"/>
+        <circle cx="180" cy="92" r="30" fill="#f3c9a5" stroke="#161616" stroke-width="3"/>
+        <path d="M150 88q0-30 30-30t30 30q-10-14-30-14t-30 14z" fill="#161616"/>
+        <circle cx="169" cy="94" r="9" fill="none" stroke="#161616" stroke-width="2.5"/>
+        <circle cx="191" cy="94" r="9" fill="none" stroke="#161616" stroke-width="2.5"/>
+        <path d="M178 94h4" stroke="#161616" stroke-width="2.5"/>
+        <ellipse class="eye" cx="169" cy="94" rx="2.8" ry="3.8" fill="#161616"/>
+        <ellipse class="eye" cx="191" cy="94" rx="2.8" ry="3.8" fill="#161616"/>
+        <path d="M171 108q9 8 18 0" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </g>
+      <rect x="108" y="168" width="144" height="44" rx="6" fill="#161616"/>
+      <circle cx="180" cy="190" r="8" fill="#ffd400"/>
+      <rect x="98" y="208" width="164" height="6" rx="3" fill="#161616"/>
+      <rect x="282" y="182" width="26" height="30" rx="4" fill="#fff" stroke="#161616" stroke-width="3"/>
+      <path d="M308 190h6a6 6 0 010 14h-6" fill="none" stroke="#161616" stroke-width="3"/>
+      <path class="steam" d="M290 172q-5-8 0-14" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path class="steam" style="animation-delay:.8s" d="M300 172q5-8 0-14" stroke="#161616" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <h1 id="nm" aria-label="Shashidhar Hiremath"></h1>
+    <span class="sp-role">Software Engineer</span>
+  </div>
+  <button id="skip" type="button">skip</button>
+</div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#home"><i>S</i>Shashidhar Hiremath</a>
+  <nav class="links">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" style="margin:0;padding:9px 18px" href="Shashidhar_h_resume.pdf" download>Resume</a>
+</div></header>
+
+<main class="wrap" id="home">
+  <div class="hero">
+    <div>
+      <h1>I make backend systems <span>work</span> and prove it.</h1>
+      <p>Two years testing a Node.js and PostgreSQL SaaS platform on AWS, now building backend features, queries and dashboards.</p>
+      <a class="btn" href="#projects">View projects</a><a class="btn alt" href="#contact">Get in touch</a>
+    </div>
+    <div class="code" aria-label="Profile as an API response">
+      <header><b></b><b></b><b></b>GET /api/shashidhar<em>200 OK</em></header>
+<pre id="json"><div>{</div><div>  <span class="k">"name"</span>: <span class="s">"Shashidhar Hiremath"</span>,</div><div>  <span class="k">"title"</span>: <span class="s">"Software Engineer"</span>,</div><div>  <span class="k">"currentRole"</span>: <span class="s">"Associate QA Engineer"</span>,</div><div>  <span class="k">"company"</span>: <span class="s">"Excelsoft Technologies"</span>,</div><div>  <span class="k">"experienceYears"</span>: <span class="n">2</span>,</div><div>  <span class="k">"stack"</span>: [<span class="s">"Node.js"</span>, <span class="s">"Express"</span>, <span class="s">"PostgreSQL"</span>, <span class="s">"AWS"</span>],</div><div>  <span class="k">"testing"</span>: [<span class="s">"Postman"</span>, <span class="s">"Selenium"</span>],</div><div>  <span class="k">"location"</span>: <span class="s">"Mysore, India"</span>,</div><div>  <span class="k">"openToBackendRoles"</span>: <span class="n">true</span></div><div>}</div></pre>
+    </div>
+  </div>
+
+  <p class="techlabel">AWS services I work with</p>
+  <div class="marquee" aria-label="AWS services"><div class="row" id="rowAws"></div></div>
+  <p class="techlabel">Languages, tools and testing</p>
+  <div class="marquee" aria-label="Skills and tools"><div class="row rev" id="rowStack"></div></div>
+
+  <div class="stats">
+    <div><b data-to="2">0</b><small>years in SaaS testing</small></div>
+    <div><b data-to="11">0</b><small>AWS services used</small></div>
+    <div><b data-to="4">0</b><small>modules tested on JSS</small></div>
+    <div><b data-to="2">0</b><small>projects</small></div>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="sub">Testing taught me where backends break. Now I build them.</p>
+    <p class="lead">I test backend-heavy SaaS applications: functional, regression and API testing for assessment and reporting modules. I work closely with backend developers on Node.js, Express and PostgreSQL, with hands-on exposure to AWS services such as Lambda, CloudWatch, S3, API Gateway and SQS. I know the full software development lifecycle and I'm moving toward backend development and test automation.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="sub">Where I work now.</p>
+    <article class="timeline">
+      <h3>Associate Quality Assurance Engineer</h3>
+      <div class="meta">Excelsoft Technologies · Mysore · Jul 2024 to present</div>
+      <ul>
+        <li>Tested assessments, quizzes, reports and user/group management against requirements and user stories, covering positive, negative and edge-case scenarios.</li>
+        <li>Ran regression testing across releases and gave QA sign-off before production deployments.</li>
+        <li>Tested backend endpoints with Postman, checking request/response contracts and data integrity.</li>
+        <li>Verified data consistency in PostgreSQL-backed workflows, and wrote and optimized SQL queries for reporting and validation.</li>
+        <li>Worked with Lambda, S3, CloudWatch, API Gateway and SQS to support backend operations, monitoring and serverless processing.</li>
+        <li>Worked with developers on the Node.js/Express and AWS architecture to target test coverage better.</li>
+        <li>Documented test results and defects, and took part in sprint planning, stand-ups and release cycles.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">One on quality, one on building.</p>
+    <div class="projects">
+      <article class="card">
+        <span class="kind">QA</span>
+        <h3>JSS · learning assessment platform</h3>
+        <ul>
+          <li>Tested the Quiz module: question rendering, scoring logic, timer and auto-submit, randomization and result calculation.</li>
+          <li>Tested Project, Test and Assignment modules: submissions, file uploads, deadlines, resubmissions and grading flows.</li>
+          <li>Verified role-based access for students, instructors and admins.</li>
+          <li>Checked generated reports (scores, submission status, completion rates) against database records.</li>
+        </ul>
+        <span class="tag">Quiz</span><span class="tag">Assignments</span><span class="tag">Role-based access</span><span class="tag">Regression</span>
+      </article>
+      <article class="card">
+        <span class="kind">Backend</span>
+        <h3>ICICIPRU · admin dashboard</h3>
+        <ul>
+          <li>Built an admin dashboard for data management and live monitoring of key operational metrics.</li>
+          <li>Optimized the database queries behind the dashboard to cut load times on large datasets.</li>
+          <li>Built RESTful APIs and AWS Lambda functions for serverless backend processing.</li>
+          <li>Designed the PostgreSQL schema and monitored API response times after deployment to fix bottlenecks.</li>
+        </ul>
+        <span class="tag">Node.js</span><span class="tag">REST APIs</span><span class="tag">Lambda</span><span class="tag">PostgreSQL</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="sub">What I use day to day.</p>
+    <div class="skillgrid">
+      <div class="group"><h3>backend</h3><span class="pill">Node.js</span><span class="pill">Express.js</span><span class="pill">REST APIs</span><span class="pill">JWT</span><span class="pill">OAuth</span></div>
+      <div class="group"><h3>database</h3><span class="pill">PostgreSQL</span><span class="pill">Query optimization</span><span class="pill">Schema design</span></div>
+      <div class="group"><h3>aws</h3><span class="pill">Lambda</span><span class="pill">Step Functions</span><span class="pill">S3</span><span class="pill">API Gateway</span><span class="pill">SNS</span><span class="pill">SES</span><span class="pill">SQS</span><span class="pill">CloudFront</span><span class="pill">CloudWatch</span><span class="pill">Cognito</span><span class="pill">RDS</span></div>
+      <div class="group"><h3>testing</h3><span class="pill">Postman</span><span class="pill">Selenium</span><span class="pill">Manual testing</span><span class="pill">Regression</span></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p class="sub"></p>
+    <div class="edu"><div><b>B.E. Mechanical Engineering · 7.75 CGPA</b><br><span>Poojya Doddappa Appa College of Engineering, Kalaburagi</span></div><span>2018 to 2022</span></div>
+  </section>
+
+  <div class="contact" id="contact">
+    <h2>Let's build something.</h2>
+    <p class="sub" style="margin:0 auto">Open to backend developer roles.</p>
+    <a class="mail" href="mailto:shashihiremath444@gmail.com">shashihiremath444@gmail.com</a><br>
+    <a class="btn" href="Shashidhar_h_resume.pdf" download>Download resume</a>
+    <a class="btn alt" href="https://www.linkedin.com/" rel="noopener">LinkedIn</a>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> Shashidhar Hiremath</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* splash: animated developer, name written below. Shows once per visit. */
+(function(){
+  const s = document.getElementById('splash'), nm = document.getElementById('nm');
+  let seen = false, t;
+  try { seen = sessionStorage.getItem('splashSeen') === '1'; } catch (e) {}
+  function close(){
+    clearTimeout(t);
+    s.classList.add('gone'); document.body.classList.remove('locked');
+    try { sessionStorage.setItem('splashSeen','1'); } catch (e) {}
+    document.querySelectorAll('#json div').forEach((d,i) => { d.style.animation = 'none'; d.offsetWidth; d.style.animation = ''; d.style.animationDelay = (300 + i*140) + 'ms'; });
+  }
+  if (seen || reduce) { s.classList.add('gone'); document.body.classList.remove('locked'); return; }
+  'Shashidhar Hiremath'.split('').forEach((ch,i) => {
+    if (ch === ' ') { nm.appendChild(document.createTextNode(' ')); return; }
+    const sp = document.createElement('span'); sp.textContent = ch; sp.style.animationDelay = (900 + i*55) + 'ms'; nm.appendChild(sp);
+  });
+  t = setTimeout(close, 5400);
+  document.getElementById('skip').addEventListener('click', close);
+  document.addEventListener('keydown', close, {once:true});
+})();
+
+/* logo marquee: simple line icons drawn for each service */
+const ICONS = {
+  lambda:'<path d="M6 20l6-9M8 4h3.5l6.5 16"/>',
+  apigw:'<path d="M4 8h12l-3-3M20 16H8l3 3"/>',
+  s3:'<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 7l2 12c.2 1 2.7 2 6 2s5.8-1 6-2l2-12"/>',
+  sqs:'<rect x="3" y="8" width="5" height="8" rx="1"/><rect x="9.5" y="8" width="5" height="8" rx="1"/><rect x="16" y="8" width="5" height="8" rx="1"/>',
+  sns:'<path d="M6 16v-5a6 6 0 0112 0v5l2 2H4l2-2zM10 21h4"/>',
+  ses:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  cloudfront:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+  cloudwatch:'<path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.5"/>',
+  cognito:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/>',
+  db:'<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+  stepfn:'<rect x="9" y="3" width="6" height="5"/><rect x="3" y="16" width="6" height="5"/><rect x="15" y="16" width="6" height="5"/><path d="M12 8v4M6 16v-4h12v4"/>',
+  node:'<path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M9 16V8l6 8V8"/>',
+  express:'<path d="M9 4c-2 0-3 1-3 3v2c0 1-1 3-2 3 1 0 2 2 2 3v2c0 2 1 3 3 3M15 4c2 0 3 1 3 3v2c0 1 1 3 2 3-1 0-2 2-2 3v2c0 2-1 3-3 3"/>',
+  rest:'<circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/><path d="M8 12h8"/>',
+  jwt:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/>',
+  oauth:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM9 12l2 2 4-4"/>',
+  postman:'<path d="M3 11l18-8-8 18-2-8-8-2z"/>',
+  check:'<circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-7"/>'
+};
+const AWS = [['Lambda','lambda'],['API Gateway','apigw'],['S3','s3'],['SQS','sqs'],['SNS','sns'],['SES','ses'],['CloudFront','cloudfront'],['CloudWatch','cloudwatch'],['Cognito','cognito'],['RDS','db'],['Step Functions','stepfn']];
+const STACK = [['Node.js','node'],['Express.js','express'],['PostgreSQL','db'],['REST APIs','rest'],['JWT','jwt'],['OAuth','oauth'],['Postman','postman'],['Selenium','check']];
+function fillRow(id, items){
+  const tiles = items.map(([n,i]) => '<div class="tile"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[i]+'</svg></span>'+n+'</div>').join('');
+  document.getElementById(id).innerHTML = tiles + (reduce ? '' : tiles);   /* second copy makes the loop seamless */
+}
+fillRow('rowAws', AWS); fillRow('rowStack', STACK);
+
+/* hero JSON: reveal line by line */
+document.querySelectorAll('#json div').forEach((d,i) => { d.style.animationDelay = (reduce ? 0 : 5400 + i*140) + 'ms'; });
+/* if the splash was already seen, start sooner */
+try { if (sessionStorage.getItem('splashSeen') === '1') document.querySelectorAll('#json div').forEach((d,i) => d.style.animationDelay = (200 + i*140) + 'ms'); } catch (e) {}
+
+/* stat counters */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; io.unobserve(e.target);
+  const to = +e.target.dataset.to; if (reduce) { e.target.textContent = to; return; }
+  let n = 0; const t = setInterval(() => { n++; e.target.textContent = n; if (n >= to) clearInterval(t); }, 900 / to);
+}), {threshold:.6});
+document.querySelectorAll('[data-to]').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
